@@ -1,0 +1,4 @@
+#!/sbin/busybox sh
+
+ln -s /sbin/busybox /sbin/sh
+recovery &
