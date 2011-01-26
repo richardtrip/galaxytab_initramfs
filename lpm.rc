@@ -33,6 +33,7 @@ on init
 	mkdir /data 0771 system system
 	mkdir /cache 0770 system cache
  
+  	mount ext4 /dev/block/stl9 /system
   	mount rfs /dev/block/stl9 /system check=no
 
 on boot
