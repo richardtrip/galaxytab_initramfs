@@ -24,8 +24,8 @@ generate_cwm_fstab()
 	echo "/sdcard vfat $sdcard_device" >> /etc/recovery.fstab
 
 	# external sdcard/USB Storage
-	echo "/dev/block/mmcblk1p1 /sd-ext vfat rw,uid=1000,gid=1015,iocharset=iso8859-1,shortname=mixed,utf8" >> /etc/fstab
-	echo "/sd-ext vfat /dev/block/mmcblk1p1" >> /etc/recovery.fstab
+	echo "/dev/block/mmcblk1p1 /sdext vfat rw,uid=1000,gid=1015,iocharset=iso8859-1,shortname=mixed,utf8" >> /etc/fstab
+	echo "/sdext vfat /dev/block/mmcblk1p1" >> /etc/recovery.fstab
 }
 
 detect_all_filesystems()

@@ -447,6 +447,8 @@ on boot
     start create_dfta
     chmod 0777 /data/dfta
 
+    start sysinit
+
     class_start default
 
 ## Daemon processes to be run by init.
@@ -675,4 +677,9 @@ service create_dfta dd if=/dev/zero of=/data/dfta bs=1 count=1
     oneshot
 
 service audiosh /system/bin/audiosh
+    oneshot
+
+# Execute files in /etc/init.d before booting
+service sysinit /system/bin/logwrapper /sbin/busybox run-parts /system/etc/init.d
+    disabled
     oneshot
